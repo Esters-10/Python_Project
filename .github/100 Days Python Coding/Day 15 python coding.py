@@ -79,7 +79,7 @@ coffee_machine = {
 }
 
 #TODO: 8 create a loop that will continue to ask users what they would like
-while is_coffee_machine_on == True:
+while is_coffee_machine_on == False:
 
 #TODO: 1 ask user what they would like
     request = input("What coffee would you like? (espresso/latte/cappuccino) Or type 'report' to check status ").lower()

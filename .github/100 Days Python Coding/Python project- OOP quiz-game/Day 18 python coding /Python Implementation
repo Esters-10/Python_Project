@@ -1,0 +1,60 @@
+import turtle as t
+import random
+
+tim = t.Turtle()
+
+tim.shape("turtle")
+tim.color("green")
+
+for x in range(10):
+    tim.pendown()
+    tim.forward(10)
+    tim.penup()
+    tim.forward(10)
+
+def draw_shape(num_sides):
+    for i in range(num_sides):
+        tim.forward(50)
+        tim.left(360/num_sides)
+        tim.forward(50)
+
+color = ["sea green", "light cyan", "red", "sienna", "light goldenrod yellow", "violet"]
+for n in range(3, 10):
+    tim.color(random.choice(color))
+    draw_shape(n)
+
+t.colormode(255)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color_tuple = (r, g, b)
+    return color_tuple
+tim.speed(0)
+tim.width(10)
+tim.pensize(10)
+
+angle = [0, 90, 180, 270]
+for _ in range(200):
+    tim.color(random_color())
+    tim.setheading(random.choice(angle)) 
+    tim.forward(20)
+
+t.colormode(255)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color_tuple = (r, g, b)
+    return color_tuple
+tim.speed(0)
+def spirograph(size_number):
+    for i in range(int(360 / size_number)):
+        tim.color(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_number)
+
+spirograph(5)
+
+screen = t.Screen()
+screen.exitonclick()
